@@ -1,0 +1,127 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Blog Website</title>
+<script src="http://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js "></script>
+
+
+       <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+       <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+       <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <header>
+            <nav class="navbar">
+                <a href="#" class="logo" style="font-family: Brush Script MT,
+                 Brush Script Std, cursive; font-weight: bolder; font-size: 45px; 
+                 text-decoration: none;"> 
+                    Blogger </a>
+
+            <a href="/login-register.html" class="m1">Login/Register</a>
+            
+            </nav>
+        </header>
+
+        <div class="c1">
+        <h1 style="font-family: URW Chancery L, cursive;">A <strong style="color:red;">Blog</strong> is only as interesting as the interest shown in others.</h1>
+<p class="tilt">"This blog website isn't just about thoughts-it's about people."</br>I believe the most captivating stories 
+are born from genuine curiosity about others.</p>
+        </div>
+
+        <div class="hello">
+<div class="card">
+    <img src="./group-happy-beautiful-young-people-600nw-2148734245.jpg" style="width: 270px; height: 204px;">
+    <h3 style="margin-top: 9px; margin-bottom: 1px;">Dancing</h3>
+    <p style="font-size: 13px; margin-top: 0;">Each movement should be purposeful,conveying the intended emotion & contributing to overall narrative.</p>
+    <a href="blog1.html"><button>View Full Blog</button></a>
+</div>
+
+<div class="card">
+    <img src="./crucial-small-business-departments-need-to-succeed.jpg" style="width: 270px; height: 204px;">
+    <h3 style="margin-top: 9px; margin-bottom: 1px;">Business</h3>
+    <p style="font-size: 13px; margin-top: 0;">Each movement should be purposeful,conveying the intended emotion & contributing to overall narrative.</p>
+    <a href="blog2.html"><button>View Full Blog</button></a>
+</div>
+
+<div class="card">
+    <img src="./COLOR-BLOCKING.jpg" style="width: 270px; height: 204px;">
+    <h3 style="margin-top: 9px; margin-bottom: 1px;">Fashion</h3>
+    <p style="font-size: 13px; margin-top: 0;">Each movement should be purposeful,conveying the intended emotion & contributing to overall narrative.</p>
+    <a href="blog3.html"><button>View Full Blog</button></a>
+</div>
+
+<div class="card">
+    <img src="./indian-food-image.jpg" style="width: 270px; height: 204px;">
+    <h3 style="margin-top: 9px; margin-bottom: 1px;">Food</h3>
+    <p style="font-size: 13px; margin-top: 0;">Each movement should be purposeful,conveying the intended emotion & contributing to overall narrative.</p>
+    <a href="blog4.html"><button>View Full Blog</button></a>
+</div>
+
+
+<div class="card">
+    <img src="./My-50-favourite-travel-blogs-1.jpg" style="width: 270px; height: 204px;">
+    <h3 style="margin-top: 9px; margin-bottom: 1px;">Travelling</h3>
+    <p style="font-size: 13px; margin-top: 0;">Each movement should be purposeful,conveying the intended emotion & contributing to overall narrative.</p>
+    <a href="blog5.html"><button>View Full Blog</button></a>
+</div>
+
+<div class="card">
+    <img src="./97273002-friends-having-fun-and-partying-in-house-and-playing-music.jpg" style="width: 270px; height: 204px;">
+    <h3 style="margin-top: 9px; margin-bottom: 1px;">Music</h3>
+    <p style="font-size: 13px; margin-top: 0;">Each movement should be purposeful,conveying the intended emotion & contributing to overall narrative.</p>
+    <a href="blog6.html"><button>View Full Blog</button></a>
+</div>
+
+<div class="card">
+    <img src="./Social-4 (1).jpg" style="width: 270px; height: 204px;">
+    <h3 style="margin-top: 9px; margin-bottom: 1px;">Technology</h3>
+    <p style="font-size: 13px; margin-top: 0;">Each movement should be purposeful,conveying the intended emotion & contributing to overall narrative.</p>
+    <a href="blog7.html"><button>View Full Blog</button></a>
+</div>
+
+<div class="card">
+    <img src="./yoga-classes-outside-on-the-open-air-kids-yoga.jpg" style="width: 270px; height: 204px;">
+    <h3 style="margin-top: 9px; margin-bottom: 1px;">Healthy Lifestyle</h3>
+    <p style="font-size: 13px; margin-top: 0;">Each movement should be purposeful,conveying the intended emotion & contributing to overall narrative.</p>
+    <a href="blog8.html"><button>View Full Blog</button></a>
+</div>
+       
+
+</div>
+
+<script >
+   
+    fetch('/check-session',
+ {
+    credentials: "include"
+})
+    
+ .then(res => {
+        if(!res.ok){
+            window.location.href='/login-register.html';
+        }
+    });
+    
+    fetch('/get-user',
+         {
+    credentials: "include"
+})
+    
+    .then(res => res.json())
+    .then(user => {
+        document.getElementById("user-email").textContent=user-email;
+    })
+    .catch(err => console.error("user not logged in"));
+</script>
+
+
+<script src="./script.js"></script>
+
+    </body>
+
+
+</html>

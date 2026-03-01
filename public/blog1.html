@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog 1</title>
+  <style>
+    header{
+        background-color: #043e7c;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    header h1{
+        margin-bottom: 0.5rem;
+    }
+
+    nav a{
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    nav a:hover{
+        text-decoration: underline;
+    }
+
+    button{
+      display: inline-block;
+    }
+
+  </style>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body data-blog-id="1">
+  <header>
+    <h1 style="font-family: Bradley Hand, cursive;">Welcome to Blog 1</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="/logout">Logout</a>
+      <span id="user-email" style="margin-left: 1rem;"></span>
+
+    </nav>
+  </header>
+
+  <main class="blog-container">
+    <section class="blog-post">
+      <img src="./group-happy-beautiful-young-people-600nw-2148734245.jpg" alt="Blog Image" class="blog-image"/>
+      <h2 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Dancing spiritually</h2>
+      <p style="font-size: larger;">
+        "Dancing is practically as a means of coming closer to spirit, to encounterr the divine, and as an expression 
+        of that relationship that already exists."
+      </p>
+      <div class="like-section">
+        <button id="like-btn" class="like-button" >👍 Like</button>
+        <span id="like-count">0</span>
+      </div>
+
+      <h3>1. Creative Expression:</h3>
+      <p>Dance allows individuals to express themselves through movement, conveying emotions and ideas without words.</p>
+
+      <h3>2. Mental Well-being:</h3>
+      <p>Dance can reduce stress, boost mood, and enhance self-esteem. Dance provides a full 
+        -body workout, strength, flexibility, and coordination
+      </p>
+
+      <h3>3. Know your & gradually progress:</h3>
+      <p>Don't push yourself too far or too fast, especially if you're a beginner. Focus on
+        mastering techniques at your current level before moving to more advanced moves.
+      </p>
+
+      <h3>4. Actual meaning of dance:</h3>
+      <p>"Dancing is more than movement- it's a powerful form  of creative expression that connects the 
+        mind, body, and soul. Whether you're a beginner or an experienced performer, each step is a journey toward 
+        self-discovery and emotional release. Through rhythm and motion, dance nurtures mental clarity, boost confidence,
+        and fosters discipline. Progress may be gradual, but every movement tells your story- bold,
+        graceful, and entirely your own."
+      </p>
+
+
+
+    </section>
+
+
+<section class="comments-section">
+      <h3>Comments</h3>
+      <form id="comment-form">
+        <textarea id="comment" placeholder="Write your comment here..." required></textarea><br>
+        <button type="submit" class="post-btn">Post</button>
+      </form>
+      <div id="comments-container" class="comments-list"></div>
+    </section>
+    
+
+  </main>
+  <script>
+    fetch('/check-session')
+    .then(res => {
+        if(!res.ok){
+            window.location.href='/login-register.html';
+        }
+    });
+
+    fetch('/get-user')
+    .then(res => res.json())
+    .then(user => {
+        document.getElementById("user-email").textContent=user-email;
+    })
+    .catch(err => console.error("user not logged in"));
+  </script>
+
+  <script src="./script.js"></script>
+</body>
+</html>

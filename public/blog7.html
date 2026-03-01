@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog 7</title>
+  <style>
+    header{
+        background-color: #043e7c;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    header h1{
+        margin-bottom: 0.5rem;
+    }
+
+    nav a{
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    nav a:hover{
+        text-decoration: underline;
+    }
+
+
+  </style>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body data-blog-id="7">
+  <header>
+    <h1 style="font-family: Bradley Hand, cursive;">Welcome to Blog 7</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="/logout">Logout</a>
+    </nav>
+  </header>
+
+  <main class="blog-container">
+    <section class="blog-post">
+      <img src="./Social-4 (1).jpg" alt="Blog Image" class="blog-image"/>
+      <h2 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        Technology is Evolving Faster Than Ever
+      </h2>
+      <p style="font-size: larger;">
+        From AI to quantum computing, the world of tech is advancing at lightning speed. Staying informed is no longer optional—it's essential.
+         A technology blog bridges the gap between innovation and understanding, helping readers make sense of what’s next.
+      </p>
+      <div class="like-section">
+        <button id="like-btn" class="like-button">👍 Like</button>
+        <span id="like-count">0</span>
+      </div>
+<h3>1. Exploring Tech careers</h3>
+<p>From software development to data science, tech offers countless paths. 
+  Your blog can guide readers through job roles, skills, and interview tips.</p>
+
+<h3>2. Hands-on Project Ideas</h3>
+<p>Real-world projects are where theory meets action. Sharing project breakdowns gives readers the confidence to build their own.
+</p>
+
+<h3>3. Tech is About Solving Real Problems</h3>
+<p>The best innovations don't just look cool—they improve lives. 
+  Whether it's a smart water purifier or an app that helps the visually impaired, your blog can spotlight how technology serves humanity, not just the elite.
+</p>
+
+<h3>4. Building Community Through Open Source</h3>
+<p>Open-source software is more than free code—it's a movement built on collaboration and trust. 
+  A tech blog can encourage readers to contribute, share projects, and become part of something bigger than themselves.
+</p>
+
+
+
+    </section>
+
+    <section class="comments-section">
+      <h3>Comments</h3>
+      <form id="comment-form">
+        <textarea id="comment" placeholder="Write your comment here..." required></textarea><br>
+        <button type="submit" class="post-btn">Post</button>
+      </form>
+      <div id="comments-container" class="comments-list"></div>
+    </section>
+  </main>
+
+
+  <script>
+    fetch('/check-session')
+    .then(res => {
+        if(!res.ok){
+            window.location.href='/login-register.html';
+        }
+    });
+
+    fetch('/get-user')
+    .then(res => res.json())
+    .then(user => {
+        document.getElementById("user-email").textContent=user-email;
+    })
+    .catch(err => console.error("user not logged in"));
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>

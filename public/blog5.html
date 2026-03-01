@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog 5</title>
+  <style>
+    header{
+        background-color: #043e7c;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    header h1{
+        margin-bottom: 0.5rem;
+    }
+
+    nav a{
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    nav a:hover{
+        text-decoration: underline;
+    }
+
+
+  </style>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body data-blog-id="5">
+  <header>
+    <h1 style="font-family: Bradley Hand, cursive;">Welcome to Blog 5</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="/logout">Logout</a>
+    </nav>
+  </header>
+
+  <main class="blog-container">
+    <section class="blog-post">
+      <img src="./My-50-favourite-travel-blogs-1.jpg" alt="Blog Image" class="blog-image"/>
+      <h2 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        “Wander With Purpose: Exploring the World One Step at a Time”
+      </h2>
+      <p style="font-size: larger;">
+        Travel is more than ticking destinations off a list—it's about the stories you collect, the people you meet, and the perspective you gain. Whether it's the serenity of mountain trails, the chaos of street markets, or the calm of a coastal sunset, every journey leaves a mark. This blog is your companion in discovering hidden gems, cultural treasures, and unforgettable experiences. 
+        Let's wander not to escape life, but so life doesn't escape us.
+      </p>
+      <div class="like-section">
+        <button id="like-btn" class="like-button">👍 Like</button>
+        <span id="like-count">0</span>
+      </div>
+<h3>1. The Beauty of Exploring New Places</h3>
+<p>Travel opens your eyes to breathtaking landscapes, diverse cultures, and unexpected experiences. Every new place has a story waiting to be discovered.
+</p>
+
+<h3>2. Budget Travel is Possible</h3>
+<p>You don't need to be rich to see the world. With a little planning,
+   budget stays, local food, and smart transport choices, you can travel affordably.</p>
+
+<h3>3. Nature's Wonders Are Everywhere</h3>
+<p>Whether it's a hidden waterfall, a desert sunset, 
+  or a peaceful forest trail, nature offers some of the most unforgettable travel moments.</p>
+
+<h3>4. Travel Builds Human Connection</h3>
+<p>From fellow travelers to locals who welcome you with a smile, 
+  the connections you make on the road can be the most lasting part of your journey.</p>
+
+<h3>5. Adventure Begins Where Comfort Ends</h3>
+<p>The real magic of travel begins when you step out of your comfort zone. 
+  Whether it's hiking a mountain or trying unfamiliar food, growth happens here.</p>
+
+
+
+    </section>
+
+    <section class="comments-section">
+      <h3>Comments</h3>
+      <form id="comment-form">
+        <textarea id="comment" placeholder="Write your comment here..." required></textarea><br>
+        <button type="submit" class="post-btn">Post</button>
+      </form>
+      <div id="comments-container" class="comments-list"></div>
+    </section>
+  </main>
+
+
+  <script>
+    fetch('/check-session')
+    .then(res => {
+        if(!res.ok){
+            window.location.href='/login-register.html';
+        }
+    });
+
+    fetch('/get-user')
+    .then(res => res.json())
+    .then(user => {
+        document.getElementById("user-email").textContent=user-email;
+    })
+    .catch(err => console.error("user not logged in"));
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>

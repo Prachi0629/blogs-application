@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog 2</title>
+  <style>
+    header{
+        background-color: #043e7c;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    header h1{
+        margin-bottom: 0.5rem;
+    }
+
+    nav a{
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    nav a:hover{
+        text-decoration: underline;
+    }
+
+
+  </style>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body data-blog-id="2">
+  <header>
+    <h1 style="font-family: Bradley Hand, cursive;">Welcome to Blog 2</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="/logout">Logout</a>
+    </nav>
+  </header>
+
+  <main class="blog-container">
+    <section class="blog-post">
+      <img src="./crucial-small-business-departments-need-to-succeed.jpg" alt="Blog Image" class="blog-image"/>
+      <h2 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">The Business Plan</h2>
+      <p style="font-size: larger;">
+        "Building a strong brand is crucial for business success. Your brand is more than just a logo 
+        or a name; it's the overall perception your customers have of your company.Businesses can be developed by many but 
+        handled by few only!" 
+      </p>
+      <div class="like-section">
+        <button id="like-btn" class="like-button">👍 Like</button>
+        <span id="like-count">0</span>
+      </div>
+
+<h3>1. Understanding Your Market</h3>
+<p>To grow a successful business, you must first understand your target audience. 
+  Market research helps identify customer needs, preferences, and behaviors.  </p>
+
+
+<h3>2. Building a Strong Brand Identity</h3>
+<p>Your brand is more than a logo—it's the voice, values, and experience you deliver. 
+  A clear identity builds trust and sets you apart from competitors. </p>
+
+  <h3>3. Digital Presence Matters</h3>
+<p>Happy customers become loyal advocates. Offering great service ensures repeat business and positive word-of-mouth.</p>
+
+<h3>4. Leadership and Teamwork
+</h3>
+<p>A business thrives under strong leadership and collaborative teams. Motivated employees are the key to long-term success.
+</p>
+
+<h3>5. Smart Financial Planning</h3>
+<p>Managing cash flow and budgeting wisely are the backbone of business success. Poor financial planning is a common cause of business failure.
+</p>
+
+<h3>6. Innovation Drives Growth</h3>
+<p>Adapting to change and embracing innovation keeps your business relevant.
+   Whether it's a new product or a better process, innovation pays off.</p>
+
+
+
+    </section>
+
+    <section class="comments-section">
+      <h3>Comments</h3>
+      <form id="comment-form">
+        <textarea id="comment" placeholder="Write your comment here..." required></textarea><br>
+        <button type="submit" class="post-btn">Post</button>
+      </form>
+      <div id="comments-container" class="comments-list"></div>
+    </section>
+  </main>
+
+  <script>
+    fetch('/check-session')
+    .then(res => {
+        if(!res.ok){
+            window.location.href='/login-register.html';
+        }
+    });
+
+    fetch('/get-user')
+    .then(res => res.json())
+    .then(user => {
+        document.getElementById("user-email").textContent=user-email;
+    })
+    .catch(err => console.error("user not logged in"));
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>

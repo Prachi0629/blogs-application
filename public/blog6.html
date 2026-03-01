@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog 6</title>
+  <style>
+    header{
+        background-color: #043e7c;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    header h1{
+        margin-bottom: 0.5rem;
+    }
+
+    nav a{
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    nav a:hover{
+        text-decoration: underline;
+    }
+
+
+  </style>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body data-blog-id="6">
+  <header>
+    <h1 style="font-family: Bradley Hand, cursive;">Welcome to Blog 6</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="/logout">Logout</a>
+    </nav>
+  </header>
+
+  <main class="blog-container">
+    <section class="blog-post">
+      <img src="./97273002-friends-having-fun-and-partying-in-house-and-playing-music.jpg" alt="Blog Image" class="blog-image"/>
+      <h2 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        Music: A Language of Emotions</h2>
+      <p style="font-size: larger;">
+        Music can express what words often cannot. Whether it’s joy, sadness, love, or motivation, music captures emotions and translates them into sound. 
+        It helps us connect with others and with ourselves on a deeper level.
+      </p>
+      <div class="like-section">
+        <button id="like-btn" class="like-button">👍 Like</button>
+        <span id="like-count">0</span>
+      </div>
+<h3>1. How Music Affects Your Mood</h3>
+<p>Music transcends borders and connects people from all walks of life. 
+  It speaks directly to emotions, no matter the language or culture.</p>
+
+<h3>2. Music and Mental Health</h3>
+<p>Listening or playing music can reduce stress and anxiety. 
+  It's often used as therapy to improve focus, memory, and emotional healing.</p>
+
+<h3>3. Live Music Hits Different</h3>
+<p>The energy of a live concert is unmatched. 
+  Seeing artists perform in real-time creates unforgettable memories and emotional connections.</p>
+
+<h3>4. Music is for Everyone</h3>
+<p>Whether you're a listener, singer, or instrumentalist—music belongs to all. It's a form of expression where talent meets passion.
+</p>
+
+<h3>5. The Joy of Playing an Instrument</h3>
+<p>Learning an instrument improves memory, coordination, and patience. 
+  It's not just a skill—it becomes a personal escape, a creative outlet, and a lifelong passion that grows with you.</p>
+
+  <h3>6. Music Brings People Together</h3>
+<p>Concerts, playlists, and jam sessions unite people of all backgrounds. Music is a social glue that creates shared experiences, lasting memories, and powerful connections among individuals.
+
+</p>
+
+
+<h3>7. Music Enhances Daily Life</h3>
+<p>Whether you're working out, studying, or just relaxing, music enhances the moment. 
+  It can boost productivity, improve focus, or simply make mundane tasks feel more enjoyable.</p>
+
+<h3>8. Behind Every Song is a Story</h3>
+<p>Every song has a story—whether it's about love, struggle, hope, or rebellion.
+   Understanding the inspiration behind a track adds a new layer of appreciation and brings you closer to the artist's perspective.
+</p>
+
+<h3>9. Technology's Impact on Music</h3>
+<p>From vinyl to streaming platforms, technology has transformed how we make and experience music. 
+  Digital tools have made music more accessible, and now anyone can create and share songs from their bedroom.</p>
+
+<h3>10. The Role of Music in Culture and History</h3>
+<p>Music reflects the times. From protest songs to national anthems, 
+  it has played a key role in shaping cultural identity and social movements across generations and geographies.</p>
+
+    </section>
+
+    <section class="comments-section">
+      <h3>Comments</h3>
+      <form id="comment-form">
+        <textarea id="comment" placeholder="Write your comment here..." required></textarea><br>
+        <button type="submit" class="post-btn">Post</button>
+      </form>
+      <div id="comments-container" class="comments-list"></div>
+    </section>
+  </main>
+
+
+  <script>
+    fetch('/check-session')
+    .then(res => {
+        if(!res.ok){
+            window.location.href='/login-register.html';
+        }
+    });
+
+    fetch('/get-user')
+    .then(res => res.json())
+    .then(user => {
+        document.getElementById("user-email").textContent=user-email;
+    })
+    .catch(err => console.error("user not logged in"));
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>

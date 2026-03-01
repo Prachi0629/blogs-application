@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog 8</title>
+  <style>
+    header{
+        background-color: #043e7c;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    header h1{
+        margin-bottom: 0.5rem;
+    }
+
+    nav a{
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    nav a:hover{
+        text-decoration: underline;
+    }
+
+
+  </style>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body data-blog-id="8">
+  <header>
+    <h1 style="font-family: Bradley Hand, cursive;">Welcome to Blog 8</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="/logout">Logout</a>
+    </nav>
+  </header>
+
+  <main class="blog-container">
+    <section class="blog-post">
+      <img src="./yoga-classes-outside-on-the-open-air-kids-yoga.jpg" alt="Blog Image" class="blog-image"/>
+      <h2 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        "Healthy Living, Happy Life"
+      </h2>
+      <p style="font-size: larger;">
+         A healthy lifestyle isn't about perfection—it's about balance. When you eat well, move daily, and care for your
+          mind, happiness follows naturally. Wellness starts with small choices that add up over time.
+      </p>
+      <div class="like-section">
+        <button id="like-btn" class="like-button">👍 Like</button>
+        <span id="like-count">0</span>
+      </div>
+<h3>1. Exercise is the Best Investment in Yourself
+</h3>
+<p>Regular physical activity boosts not only your body but also your mind. 
+  Whether it's a brisk walk or an intense workout, staying active reduces the risk of disease and increases energy levels. It’s a daily habit that pays off for life.
+</p>
+
+<h3>2. Start Slow, Build Strong</h3>
+<p>If you're new to exercising, don't rush into high-intensity routines. Start with basic movements like stretching, 
+  walking, or light yoga. Over time, you'll build strength, endurance, and confidence.</p>
+
+<h3>3. Cardio Keeps the Heart Happy</h3>
+<p>Running, cycling, dancing, or even jumping rope—cardio keeps your heart strong and your lungs healthy. It also boosts mood and burns calories, making it a key part of any balanced routine.
+</p>
+
+<h3>4. Exercise Fuels Mental Health</h3>
+<p>Physical activity releases endorphins—your brain's natural feel-good chemicals. Regular workouts can help reduce stress, fight anxiety, and boost self-esteem, making you feel better inside and out.
+</p>
+
+<h3>5. Hydration and Nutrition Matter</h3>
+<p>Exercise alone is not enough—what you eat and drink fuels your performance. 
+  Stay hydrated and nourish your body with balanced meals to support recovery and energy levels.</p>
+
+<h3>6. Make Fitness Fun, Not a Chore</h3>
+<p>Find movement you enjoy—whether it's dance, hiking, swimming, or playing a sport. When fitness feels fun, 
+  it becomes something you look forward to, not something you dread.</p>
+
+
+    </section>
+
+    <section class="comments-section">
+      <h3>Comments</h3>
+      <form id="comment-form">
+        <textarea id="comment" placeholder="Write your comment here..." required></textarea><br>
+        <button type="submit" class="post-btn">Post</button>
+      </form>
+      <div id="comments-container" class="comments-list"></div>
+    </section>
+  </main>
+
+
+  <script>
+    fetch('/check-session')
+    .then(res => {
+        if(!res.ok){
+            window.location.href='/login-register.html';
+        }
+    });
+
+    fetch('/get-user')
+    .then(res => res.json())
+    .then(user => {
+        document.getElementById("user-email").textContent=user-email;
+    })
+    .catch(err => console.error("user not logged in"));
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>

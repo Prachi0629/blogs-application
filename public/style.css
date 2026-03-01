@@ -1,0 +1,241 @@
+.navbar{
+    display: flex;
+    text-align: center;
+margin-top: 6px;
+}
+
+
+.navbar .m1{
+    padding: 8px 15px;
+    border-radius: 15px;
+    transition: 0.4s ease;
+    color: azure;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    background-color: blue;
+    
+    margin-left: 1000px;
+}
+
+.navbar  .logo{
+    margin-top: none;
+    margin-left: 40px;
+    font-size: 1.9rem;
+    color: #f3961c;
+    font-weight: bolder;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.c1{
+    margin-top: 50px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.tilt{
+    margin-top: 20px;
+    font-size: large;
+}
+
+
+.tilt::after{
+    content: "";
+    width: 100px;
+    height: 5px;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 8px;
+    background: #f3961c;
+}
+
+.hello{
+    margin-top: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 17px;
+    flex-wrap: wrap;
+    margin-bottom: 45px;
+}
+
+
+.card{
+    box-shadow: 0 2px 5px 0 rgb(0, 0, 0.4);
+    max-width: 270px;
+    
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    height: 55%;
+}
+
+.card button{
+    border: none;
+    outline: 0;
+    padding: 8px;
+    color: white;
+    background-color: black;
+    text-align: center;
+    cursor: pointer;
+    width: 50%;
+    font-size: 13px;
+    margin-left: 2px;
+   }
+
+.card button:hover{
+    opacity: 0.7;
+}
+
+
+
+/*blog pages */
+.blog-container{
+    max-width: 950px;
+    margin: 15px auto;
+    background-color: rgb(250, 231, 195);
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgb(0, 0, 0.2);
+}
+
+.blog-image{
+    width: 100%;
+    height: 500px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.like-section{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.like-button{
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform  0.2s ease-out;
+}
+
+.like-button:active{
+    transform: scale(1.2);
+}
+
+#like-count{
+    font-size: 1.2rem;
+}
+
+.comments-section h3{
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+#comment-form {
+  margin-bottom: 20px;
+}
+
+#comment {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  resize: vertical;
+}
+
+.post-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.post-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Comments List */
+.comments-list {
+  margin-top: 10px;
+}
+
+.comment-item {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  position: relative;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.comment-meta {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.comment-message {
+  margin-bottom: 5px;
+}
+
+/* Delete Button (Trash Emoji) */
+.delete-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: none;
+  background: none;
+  color: red;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.delete-btn:hover {
+  color: darkred;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .blog-container {
+    padding: 15px;
+  }
+
+  .like-button {
+    font-size: 1.3rem;
+  }
+
+  #like-count {
+    font-size: 1rem;
+  }
+
+  .post-btn {
+    width: 100%;
+  }
+
+  #comment {
+    height: 70px;
+  }
+}

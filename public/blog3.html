@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog 3</title>
+  <style>
+    header{
+        background-color: #043e7c;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    header h1{
+        margin-bottom: 0.5rem;
+    }
+
+    nav a{
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    nav a:hover{
+        text-decoration: underline;
+    }
+
+
+  </style>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body data-blog-id="3">
+  <header>
+    <h1 style="font-family: Bradley Hand, cursive;">Welcome to Blog 3</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="/logout">Logout</a>
+    </nav>
+  </header>
+
+  <main class="blog-container">
+    <section class="blog-post">
+      <img src="./COLOR-BLOCKING.jpg" alt="Blog Image" class="blog-image"/>
+      <h2 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Street style Fashion</h2>
+      <p style="font-size: larger;">
+        Street Fashion is a celebration of creativity, where individuals curate outfits that showcase their personalities 
+        and bold fashion choices, often drawing inspiration from divers sources like music,film and youth subcultures.  
+      </p>
+      <div class="like-section">
+        <button id="like-btn" class="like-button">👍 Like</button>
+        <span id="like-count">0</span>
+      </div>
+<h3>1. Comfort is the New Cool</h3>
+<p>Streetwear blends comfort with confidence. Oversized hoodies, 
+  sneakers, and relaxed fits prove that you don't have to sacrifice ease for style.</p>
+
+  <h3>2. Layering is an Art</h3>
+<p>Streetwear layers for style and function. 
+  Think oversized shirts over hoodies, jackets over sweats—it’s all about balance and attitude.</p>
+
+<h3>3. Accessories Make the Look</h3>
+<p>Bucket hats, chains, sunglasses, and crossbody bags can elevate a basic outfit. Street style thrives on those bold, finishing touches.
+</p>
+
+    </section>
+
+    <section class="comments-section">
+      <h3>Comments</h3>
+      <form id="comment-form">
+        <textarea id="comment" placeholder="Write your comment here..." required></textarea><br>
+        <button type="submit" class="post-btn">Post</button>
+      </form>
+      <div id="comments-container" class="comments-list"></div>
+    </section>
+  </main>
+
+<script>
+    fetch('/check-session')
+    .then(res => {
+        if(!res.ok){
+            window.location.href='/login-register.html';
+        }
+    });
+
+    fetch('/get-user')
+    .then(res => res.json())
+    .then(user => {
+        document.getElementById("user-email").textContent=user-email;
+    })
+    .catch(err => console.error("user not logged in"));
+  </script>
+
+  <script src="./script.js"></script>
+</body>
+</html>
